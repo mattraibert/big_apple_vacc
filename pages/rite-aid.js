@@ -11,11 +11,13 @@ class RiteAidStore {
 }
 
 
-const RiteAid = ({stores}) =>
+const RiteAid = ({stores, timestamp}) =>
   <ul>
+    <p>{timestamp}</p>
     {stores.map(store => {
       store = new RiteAidStore(store)
-      return <li>Rite Aid #{store.storeNumber} {store.locationDescription} {store.hasSlots() ? <a href={store.signUpUrl}>⭐ AVAILABLE</a> : null}</li>
+      return <li>Rite Aid #{store.storeNumber} {store.locationDescription} {store.hasSlots() ?
+        <a href={store.signUpUrl}>⭐ AVAILABLE</a> : null}</li>
     })}
   </ul>
 
@@ -26,7 +28,7 @@ export async function getStaticProps() {
     return store
   }))
 
-  return {props: {stores}}
+  return {props: {stores, timestamp: Date.now()}}
 }
 
 export default RiteAid
