@@ -14,9 +14,9 @@ class RiteAidStore {
 const RiteAid = ({stores, timestamp}) =>
   <ul>
     <p>{timestamp}</p>
-    {stores.map(store => {
+    {stores.map((store, i) => {
       store = new RiteAidStore(store)
-      return <li>Rite Aid #{store.storeNumber} {store.locationDescription} {store.hasSlots() ?
+      return <li key={i}>Rite Aid #{store.storeNumber} ({store.fullZipCode}) {store.locationDescription} {store.hasSlots() ?
         <a href={store.signUpUrl}>⭐ AVAILABLE</a> : null}</li>
     })}
   </ul>
