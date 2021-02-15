@@ -12,5 +12,8 @@
     "react-dom": "^17.0.1"
   },
   "cacheDirectories": [".next/cache"],
+  "engines": {
+    "node": "^14.15.4"
+  },
   "license": "MIT"
 }
