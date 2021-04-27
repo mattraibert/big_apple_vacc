@@ -10,7 +10,6 @@ class RiteAidStore {
   signUpUrl = "https://www.riteaid.com/pharmacy/covid-qualifier"
 }
 
-
 const Index = ({stores, timestamp}) =>
   <ul>
     <p>{timestamp}</p>
